@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author weiss
+ *
+ */
+module codingtest {
+}
