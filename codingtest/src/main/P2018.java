@@ -32,12 +32,12 @@ public class P2018 {
 		try {
 			st = new StringTokenizer(bf.readLine());
 			int n = Integer.parseInt(st.nextToken()); // 숫자 카운트
-			int res = 1; // result
+			int res = 0; // result
 			int start = 1;
 			int end = 1;
-			long sum = 0;
+			long sum = 1;
 			
-			while(end != n) {
+			while(end <= n) {
 				if(n == sum) {
 					res++;
 					end++;
