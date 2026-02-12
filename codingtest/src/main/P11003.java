@@ -7,7 +7,24 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.StringTokenizer;
 
-public class Main {
+/**
+ * 2026/02/09
+ * @author weiss
+ * 문제
+ * N개의 수 A1, A2, ..., AN과 L이 주어진다.
+ * 
+ * Di = Ai-L+1 ~ Ai 중의 최솟값이라고 할 때, D에 저장된 수를 출력하는 프로그램을 작성하시오. 이때, i ≤ 0 인 Ai는 무시하고 D를 구해야 한다.
+ * 
+ * 입력
+ * 첫째 줄에 N과 L이 주어진다. (1 ≤ L ≤ N ≤ 5,000,000)
+ * 
+ * 둘째 줄에는 N개의 수 Ai가 주어진다. (-109 ≤ Ai ≤ 109)
+ * 
+ * 출력
+ * 첫째 줄에 Di를 공백으로 구분하여 순서대로 출력한다.
+ * 
+ */
+public class P11003 {
 	public static void main(String[] args) {
 		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st;
@@ -27,12 +44,11 @@ public class Main {
 				}
 				deque.addLast(new MyNode(i, num));
 				
-				while(!deque.isEmpty() && deque.getFirst().index <= i - m) {
+				while(deque.getFirst().index < i - m) {
 					deque.removeFirst();
 				}
 				sb.append(deque.getFirst().value).append(" ");
 			}
-			System.out.print(sb.toString());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -46,3 +62,4 @@ public class Main {
 		}
 	}
 }
+
